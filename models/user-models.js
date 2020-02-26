@@ -10,14 +10,48 @@ var user = new Schema({
 		required: [true, '{PATH} is required'],
 		unique: true,
 		minlength: 4,
+		unique: true,
 	},
 	password: {
 		type: String,
 		required: [true, '{PATH} is required'],
-		minlength: 8,
+		minlength: 6,
 	},
 	created_at: { type: Date, default: Date.now },
-	updated_at: { type: Date, default: Date.now },
+	uploads: [
+		{
+			name: String,
+			url: String,
+			date: {
+				type: Date,
+				default: Date.now,
+			},
+		},
+	],
+	uploadActivity: [
+		{
+			date: {
+				type: Date,
+				default: Date.now,
+			},
+			name: String,
+			success: Boolean,
+		},
+	],
+	loginActivity: [
+		{
+			date: Date,
+			success: Boolean,
+		},
+	],
+});
+
+user.post('save', function(error, doc, next) {
+	if (error.name === 'MongoError' && error.code === 11000) {
+		next(new Error(`Username ${doc.username} is already taken.`));
+	} else {
+		next(error);
+	}
 });
 
 // before saving document to mongodb

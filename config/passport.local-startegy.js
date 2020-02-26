@@ -15,8 +15,31 @@ module.exports = function() {
 
 				user.comparePassword(password, function(err, data) {
 					if (data == false) {
+						// Unauth login attempt
+						user.loginActivity.push({
+							date: Date.now(),
+							success: false,
+						});
+						user
+							.update(user)
+							.then(() => {})
+							.catch(err => {
+								console.log(err);
+							});
 						return done(null, false, { message: 'Invalid Password' });
 					} else {
+						// User is logged in. Log it.
+						user.loginActivity.push({
+							date: Date.now(),
+							success: true,
+						});
+
+						user
+							.update(user)
+							.then(() => {})
+							.catch(err => {
+								console.log(err);
+							});
 						return done(err, user);
 					}
 				});
