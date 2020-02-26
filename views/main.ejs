@@ -1,0 +1,36 @@
+<div class="row section">
+	<div class="col m6 s12 l6">
+		<!-- <p>
+			<%= user %>
+		</p> -->
+		<form
+			class="center"
+			action="/upload"
+			method="post"
+			enctype="multipart/form-data"
+		>
+			<p>You can upload upto 10 images at a time.</p>
+			<p>They should be 5 MB or less. (limitation can be removed)</p>
+
+			<label for="imagelol" class="uploader"
+				>Upload image(s)
+				<input
+					type="file"
+					name="imagelol"
+					id="imagelol"
+					multiple="multiple"
+					accept="image/*"
+					onchange="update(this.files)"
+				/>
+			</label>
+			<br />
+			<p id="loaded" class="center"></p>
+			<br />
+			<button type="submit" class="center btn blue">Submit</button>
+		</form>
+	</div>
+
+	<div class="col m6 s12 l6">
+		<h4>Your images</h4>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+.title-bar {
+	position: sticky;
+	width: 100%;
+	top: 0px;
+	background-color: #6600ff;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.title-bar a {
+	float: left;
+	color: #ffffff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.title-bar a.active {
+	background-color: #deb602;
+	color: white;
+}
+
+div.title-bar .right {
+	float: right;
+	width: 10%;
+}
+
+input[type='file'] {
+	display: none;
+}
+
+.uploader {
+	border: 1px solid #ccc;
+	display: inline-block;
+	padding: 6px 12px;
+	cursor: pointer;
+}

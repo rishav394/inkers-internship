@@ -1,0 +1,6 @@
+jquery.min.js
+materialize.min.js
+materialize.min.css
+
+# Prettier HTML formatting  
+*.html
