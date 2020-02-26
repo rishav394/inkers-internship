@@ -7,6 +7,7 @@ const authRoute = require('./routes/auth-routes');
 const cookieSession = require('cookie-session');
 const mongodb = require('./mongodb/mongodb.connect');
 const uploadRoute = require('./routes/upload-routes');
+const allUploads = require('./lib/upload-finder');
 
 // Encrypt cookie
 app.use(
@@ -59,8 +60,11 @@ app.get('/signup', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-	res.render('index', {
-		user: req.user,
+	allUploads(req.user, urls => {
+		res.render('index', {
+			user: req.user,
+			urls: urls,
+		});
 	});
 });
 

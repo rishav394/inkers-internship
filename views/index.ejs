@@ -24,17 +24,18 @@
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 		<script>
+			function update(e) {
+				var message = Array.from(e)
+					.map(file => {
+						return file.name;
+					})
+					.join('<br>');
+				document.querySelector('p#loaded').innerHTML = message;
+			}
+
 			document.addEventListener('DOMContentLoaded', function() {
-				function update(e) {
-					var message = Array.from(e)
-						.map(file => {
-							return file.name;
-						})
-						.join('<br>');
-					document.querySelector('p#loaded').innerHTML = message;
-				}
 				var elems = document.querySelectorAll('.materialboxed');
-				var instances = M.Materialbox.init(elems, options);
+				var instances = M.Materialbox.init(elems);
 			});
 		</script>
 	</body>

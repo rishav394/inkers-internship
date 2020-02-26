@@ -31,6 +31,23 @@
 	</div>
 
 	<div class="col m6 s12 l6">
-		<h4>Your images</h4>
+		<h4 class="center">Your images</h4>
+		<p class="small lead-text center">You can click on images to enlarge</p>
+		<div class="row">
+			<% if (urls) { %> <% urls.forEach(url => { %>
+			<div class="col l4 s4 m4" style="height: 250px; ">
+				<img
+					class="materialboxed"
+					src="<%= url.a %>"
+					style="width: 100%; height: 100%; object-fit: contain;"
+				/>
+				<a href="<%= url.a %>">
+					<p class="center"><%= url.name %></p>
+				</a>
+			</div>
+			<% }) %> <% } else { %>
+			<p class="center">You have no images uploaded</p>
+			<% } %>
+		</div>
 	</div>
 </div>
