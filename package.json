@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "My intern application project",
 	"main": "server.js",
-	"license": "ISC",
+	"license": "GPL-3.0-or-later",
 	"author": "rishav394",
 	"scripts": {
 		"start": "node server.js"
