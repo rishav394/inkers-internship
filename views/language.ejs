@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('head.ejs') %>
+		<style>
+			img.center {
+				cursor: pointer;
+			}
+		</style>
+		<title><%= __('Language selection') %></title>
+	</head>
+	<body>
+		<%- include('nav.ejs') %>
+
+		<div class="container section">
+			<div class="row">
+				<div
+					onClick="ShowModal(this)"
+					class="col s12 m6 l4 container"
+					data-id="en"
+				>
+					<img
+						class="center responsive-image"
+						src="english.png"
+						height="200px"
+						style="object-fit: contain; max-width:100%; max-height:100%;"
+					/>
+					<p class="center">English</p>
+				</div>
+				<div
+					onClick="ShowModal(this)"
+					class="col s12 m6 l4 container"
+					data-id="hi"
+				>
+					<img
+						class="center responsive-image"
+						src="hindi.png"
+						height="200px"
+						style="object-fit: contain; max-width:100%; max-height:100%;"
+					/>
+					<p class="center">Hindi</p>
+				</div>
+				<div
+					onClick="ShowModal(this)"
+					class="col s12 m6 l4 container"
+					data-id="bn"
+				>
+					<img
+						class="center responsive-image"
+						src="bengali.png"
+						height="200px"
+						style="object-fit: contain; max-width:100%; max-height:100%;"
+					/>
+					<p class="center">Bengali</p>
+				</div>
+				<div
+					onClick="ShowModal(this)"
+					class="col s12 m6 l4 container"
+					data-id="kn"
+				>
+					<img
+						class="center responsive-image"
+						src="bangalore.png"
+						style="object-fit: contain; max-width:100%; max-height:100%;"
+						height="200px"
+					/>
+					<p class="center">Kannada</p>
+				</div>
+				<div
+					onClick="ShowModal(this)"
+					class="col s12 m6 l4 container"
+					data-id="kn"
+				>
+					<img
+						class="center responsive-image"
+						src="tamil.png"
+						style="object-fit: contain; max-width:100%; max-height:100%;"
+						height="200px"
+					/>
+					<p class="center">Tamil</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+		<script>
+			var elems = document.querySelectorAll('.sidenav');
+			var instances = M.Sidenav.init(elems, {
+				edge: 'right',
+			});
+			function setCookie(name, value, days) {
+				var expires = '';
+				if (days) {
+					var date = new Date();
+					date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+					expires = '; expires=' + date.toUTCString();
+				}
+				document.cookie = name + '=' + (value || '') + expires + '; path=/';
+			}
+			const ShowModal = elem => {
+				var dataId = $(elem).data('id');
+				setCookie('locale', dataId, 100);
+				window.location.reload();
+			};
+		</script>
+	</body>
+</html>

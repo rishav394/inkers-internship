@@ -84,8 +84,12 @@ app.get('/', (req, res) => {
 
 app.get('/logs', authcheck, displayLogs);
 
+app.get('/language', (req, res) => {
+	res.render('language', { user: req.user });
+});
+
 app.use((err, req, res, next) => {
-	res.status(500).json({ message: err.message });
+	res.status(500).send(err.message);
 });
 
 module.exports = app;
