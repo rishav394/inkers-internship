@@ -6,6 +6,7 @@ const uploadLoadToS3 = require('../lib/aws-upload');
 var cpUpload = upload.fields([{ name: 'imagelol', maxCount: 8 }]);
 
 router.post('/', cpUpload, (req, res) => {
+	if (req.files.imagelol == undefined) return res.redirect('back');
 	User.findById(req.user.id, (err, user) => {
 		var errors = [];
 		var promises = [];
