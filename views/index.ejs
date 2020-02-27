@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<%- include('head.ejs') %>
-		<title>Inkers Internship</title>
+		<title><%= __('Inkers Internship') %></title>
 	</head>
 
 	<body>
@@ -10,6 +10,12 @@
 		else { %> <%- include('noauth.ejs') %> <% } %>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+		<script>
+			var elems = document.querySelectorAll('.sidenav');
+			var instances = M.Sidenav.init(elems, {
+				edge: 'right',
+			});
+		</script>
 		<script>
 			function update(e) {
 				var message = Array.from(e)

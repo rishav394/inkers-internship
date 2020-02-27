@@ -2,15 +2,22 @@
 <html lang="en">
 	<head>
 		<%- include('head.ejs') %>
-		<title>Inkers Log</title>
+		<title><%= __('Inkers Log') %></title>
 	</head>
 	<body>
 		<%- include('nav.ejs') %>
 		<div class="section row">
 			<%- include('loginLogs.ejs') %> <%- include('uploadLogs.ejs') %>
 			<p class="small grey-text center text-darken-1">
-				The results can be paginated if thats what you want
+				<%= __('The results can be paginated if thats what you want') %>
 			</p>
 		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+		<script>
+			var elems = document.querySelectorAll('.sidenav');
+			var instances = M.Sidenav.init(elems, {
+				edge: 'right',
+			});
+		</script>
 	</body>
 </html>

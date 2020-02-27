@@ -9,11 +9,13 @@
 			method="post"
 			enctype="multipart/form-data"
 		>
-			<p>You can upload upto 10 images at a time.</p>
-			<p>They should be 5 MB or less. (limitation can be removed)</p>
+			<p><%= __('You can upload upto 10 images at a time.') %></p>
+			<p>
+				<%= __('They should be 5 MB or less. (limitation can be removed)') %>
+			</p>
 
 			<label for="imagelol" class="uploader"
-				>Upload image(s)
+				><%= __('Upload image(s)') %>
 				<input
 					type="file"
 					name="imagelol"
@@ -26,11 +28,11 @@
 			<br />
 			<p id="loaded" class="center"></p>
 			<br />
-			<button type="submit" class="center btn blue">Submit</button>
+			<button type="submit" class="center btn blue"><%= __('Submit') %></button>
 		</form>
 
 		<% if (message) { %>
-		<h5>Message from server</h5>
+		<h5><%= __('Message from server') %></h5>
 		<p class="grey-text text-darken-2">
 			<%= message.trim() %>
 		</p>
@@ -38,8 +40,10 @@
 	</div>
 
 	<div class="col m6 s12 l6">
-		<h4 class="center">Your images</h4>
-		<p class="small lead-text center">You can click on images to enlarge</p>
+		<h4 class="center"><%= __('Your images') %></h4>
+		<p class="small lead-text center">
+			<%= __('You can click on images to enlarge') %>
+		</p>
 		<div class="row">
 			<% if (urls) { %> <% urls.forEach(url => { %>
 			<div class="col l4 s4 m4" style="height: 250px; ">
@@ -53,7 +57,7 @@
 				</a>
 			</div>
 			<% }) %> <% } else { %>
-			<p class="center">You have no images uploaded</p>
+			<p class="center"><%= __('You have no images uploaded') %></p>
 			<% } %>
 		</div>
 	</div>

@@ -15,13 +15,13 @@
 					<div class="input-field">
 						<input type="text" id="username" name="username" /><br />
 						<label class="grey-text text-darken-2" for="username"
-							>Username</label
+							><%= __('Username') %></label
 						>
 					</div>
 					<div class="input-field">
 						<input type="password" id="password" name="password" />
 						<label class="grey-text text-darken-2" for="password"
-							>Password</label
+							><%= __('Password') %></label
 						>
 					</div>
 					<div>
@@ -30,16 +30,16 @@
 							type="submit"
 							name="action"
 						>
-							Login
+							<%= __('Login') %>
 							<i class="material-icons right">send</i>
 						</button>
 					</div>
 				</form>
 				<a href="/signup">
-					<p class="blue-text">Sign up instead!</p>
+					<p class="blue-text"><%= __('Sign up instead') %>!</p>
 				</a>
 				<a href="/auth/reset">
-					<p class="blue-text">Forgot password?</p>
+					<p class="blue-text"><%= __('Forgot password') %>?</p>
 				</a>
 			</div>
 		</div>

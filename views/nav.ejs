@@ -1,16 +1,65 @@
-<div class="title-bar">
-	<a class="active" href="/"
-		><i class="fa fa-fw fa-address-book"></i>Inkers Internship</a
-	>
-	<% if(user){ %>
-	<a class="right" href="/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
-	<a class="right" href="/logs"><i class="fa fa-fw fa-history"></i>Logs</a>
-	<a class="right" href="/auth/changePassword"
-		><i class="fa fa-fw fa-key"></i>Change Password</a
-	>
-	<% } else { %>
-	<a class="right proactive" href="/login"
-		><i class="fa fa-fw fa-sign-in"></i>Login</a
-	>
-	<% } %>
-</div>
+<header>
+	<nav>
+		<div class="nav-wrapper">
+			<ul>
+				<li>
+					<a class="active" href="/"
+						><i class="fa fa-fw fa-address-book"></i><%= __('Inkers Internship')
+						%></a
+					>
+				</li>
+			</ul>
+			<a href="#" class="sidenav-trigger right" data-target="mobile-links">
+				<i class="material-icons">menu</i>
+			</a>
+
+			<ul id="nav-mobile" class="right hide-on-small-and-down">
+				<% if(user){ %>
+				<li>
+					<a href="/logs"
+						><i class="fa fa-fw fa-history"></i><%= __('Logs') %></a
+					>
+				</li>
+				<li>
+					<a href="/auth/changePassword"
+						><i class="fa fa-fw fa-key"></i><%= __('Change Password') %></a
+					>
+				</li>
+				<li>
+					<a href="/logout"
+						><i class="fa fa-fw fa-sign-out"></i><%= __('Logout') %></a
+					>
+				</li>
+				<% } else { %>
+				<li>
+					<a href="/login"
+						><i class="fa fa-fw fa-sign-in"></i><%= __('Login') %></a
+					>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="sidenav grey lighten-5" id="mobile-links">
+		<% if(user){ %>
+		<li>
+			<a href="/logs"><i class="fa fa-fw fa-history"></i><%= __('Logs') %></a>
+		</li>
+		<li>
+			<a href="/auth/changePassword"
+				><i class="fa fa-fw fa-key"></i><%= __('Change Password') %></a
+			>
+		</li>
+		<li>
+			<a href="/logout"
+				><i class="fa fa-fw fa-sign-out"></i><%= __('Logout') %></a
+			>
+		</li>
+		<% } else { %>
+		<li>
+			<a href="/login"><i class="fa fa-fw fa-sign-in"></i><%= __('Login') %></a>
+		</li>
+		<% } %>
+	</ul>
+</header>

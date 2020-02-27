@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<%- include('authHead.ejs') %>
-		<title>Forget Password</title>
+		<title><%= __('Forget Password') %></title>
 	</head>
 
 	<body>
@@ -13,13 +13,13 @@
 					<div class="input-field">
 						<input type="text" id="username" name="username" /><br />
 						<label class="grey-text text-darken-2" for="username"
-							>Enter Username for OTP</label
+							><%= __('Enter Username for OTP') %></label
 						>
 					</div>
 					<div class="input-field" id="otp">
 						<input type="text" id="otp" name="otp" /><br />
 						<label class="grey-text text-darken-2" for="otp"
-							>Enter OTP (dummy otp is 0000 as of now)</label
+							><%= __('Enter OTP (dummy otp is 0000 as of now)') %></label
 						>
 					</div>
 					<div>
@@ -28,7 +28,7 @@
 							type="submit"
 							name="action"
 						>
-							Request OTP
+							<%= __('Request OTP') %>
 							<i class="material-icons right">send</i>
 						</button>
 					</div>

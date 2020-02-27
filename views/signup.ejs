@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<%- include('authHead.ejs') %>
-		<title>Sign up</title>
+		<title><%= __('Sign up') %></title>
 	</head>
 
 	<body>
@@ -15,19 +15,19 @@
 					<div class="input-field">
 						<input type="text" id="username" name="username" /><br />
 						<label class="grey-text text-darken-2" for="username"
-							>Username</label
+							><%= __('Username') %></label
 						>
 					</div>
 					<div class="input-field">
 						<input type="password" id="password" name="password" />
 						<label class="grey-text text-darken-2" for="password"
-							>Password</label
+							><%= __('Password') %></label
 						>
 					</div>
 					<div class="input-field">
 						<input type="password" id="cpassword" name="cpassword" />
 						<label class="grey-text text-darken-2" for="cpassword"
-							>Confirm password</label
+							><%= __('Confirm password') %></label
 						>
 					</div>
 					<div>
@@ -36,13 +36,13 @@
 							type="submit"
 							name="action"
 						>
-							Sign Up
+							<%= __('Sign Up') %>
 							<i class="material-icons right">send</i>
 						</button>
 					</div>
 				</form>
 				<a href="/login">
-					<p class="blue-text">Login instead!</p>
+					<p class="blue-text"><%= __('Login instead') %>!</p>
 				</a>
 			</div>
 		</div>
