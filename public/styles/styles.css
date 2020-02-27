@@ -21,6 +21,10 @@
 	color: white;
 }
 
+body > div.title-bar > a:nth-child(4) {
+	width: 14%;
+}
+
 div.title-bar .right {
 	float: right;
 	width: 10%;
