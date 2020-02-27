@@ -23,9 +23,7 @@ module.exports = function() {
 						user
 							.update(user)
 							.then(() => {})
-							.catch(err => {
-								console.log(err);
-							});
+							.catch(err => {});
 						return done(null, false, { message: 'Invalid Password' });
 					} else {
 						// User is logged in. Log it.
@@ -37,9 +35,7 @@ module.exports = function() {
 						user
 							.update(user)
 							.then(() => {})
-							.catch(err => {
-								console.log(err);
-							});
+							.catch(err => {});
 						return done(err, user);
 					}
 				});

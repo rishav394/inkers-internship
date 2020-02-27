@@ -1,0 +1,21 @@
+<div class="col l5 m5 s12">
+	<h4>Login Logs</h4>
+	<div>
+		<table class="highlight">
+			<tr>
+				<th>Time</th>
+				<th>Success</th>
+			</tr>
+			<% login.forEach(loginEntry => { %>
+			<tr>
+				<td>
+					<%= loginEntry.date %>
+				</td>
+				<td>
+					<%= loginEntry.success %>
+				</td>
+			</tr>
+			<% }) %>
+		</table>
+	</div>
+</div>

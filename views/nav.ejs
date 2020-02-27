@@ -1,14 +1,13 @@
 <div class="title-bar">
-	<a class="active" href="#"
+	<a class="active" href="/"
 		><i class="fa fa-fw fa-address-book"></i>Inkers Internship</a
 	>
 	<% if(user){ %>
-	<a class="right proactive" href="/logout"
-		><i class="fa fa-fw  fa-sign-out"></i>Logout</a
-	>
+	<a class="right" href="/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+	<a class="right" href="/logs"><i class="fa fa-fw fa-history"></i>Logs</a>
 	<% } else { %>
 	<a class="right proactive" href="/login"
-		><i class="fa fa-fw  fa-sign-in"></i>Login</a
+		><i class="fa fa-fw fa-sign-in"></i>Login</a
 	>
 	<% } %>
 </div>

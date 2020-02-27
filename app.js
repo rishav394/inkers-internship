@@ -8,6 +8,7 @@ const cookieSession = require('cookie-session');
 const mongodb = require('./mongodb/mongodb.connect');
 const uploadRoute = require('./routes/upload-routes');
 const allUploads = require('./lib/upload-finder');
+const { displayLogs } = require('./controller/logs.controller');
 
 // Encrypt cookie
 app.use(
@@ -62,11 +63,14 @@ app.get('/signup', (req, res) => {
 app.get('/', (req, res) => {
 	allUploads(req.user, urls => {
 		res.render('index', {
+			message: req.query.message,
 			user: req.user,
 			urls: urls,
 		});
 	});
 });
+
+app.get('/logs', authcheck, displayLogs);
 
 app.use((err, req, res, next) => {
 	res.status(500).json({ message: err.message });

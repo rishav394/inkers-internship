@@ -1,0 +1,25 @@
+<div class="col l7 m7 s12">
+	<h4>Upload Logs</h4>
+	<div>
+		<table class="highlight">
+			<tr>
+				<th>Time</th>
+				<th>Name of file</th>
+				<th>Success</th>
+			</tr>
+			<% upload.forEach(uploadEntry => { %>
+			<tr>
+				<td>
+					<%= uploadEntry.date %>
+				</td>
+				<td>
+					<%= String(uploadEntry.name).slice(0,20) %>
+				</td>
+				<td>
+					<%= uploadEntry.success %>
+				</td>
+			</tr>
+			<% }) %>
+		</table>
+	</div>
+</div>

@@ -28,6 +28,13 @@
 			<br />
 			<button type="submit" class="center btn blue">Submit</button>
 		</form>
+
+		<% if (message) { %>
+		<h5>Message from server</h5>
+		<p class="grey-text text-darken-2">
+			<%= message.trim() %>
+		</p>
+		<% } %>
 	</div>
 
 	<div class="col m6 s12 l6">
@@ -42,7 +49,7 @@
 					style="width: 100%; height: 100%; object-fit: contain;"
 				/>
 				<a href="<%= url.a %>">
-					<p class="center"><%= url.name %></p>
+					<p class="center"><%= url.name.slice(0,20) %></p>
 				</a>
 			</div>
 			<% }) %> <% } else { %>

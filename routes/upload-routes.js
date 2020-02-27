@@ -48,22 +48,18 @@ router.post('/', cpUpload, (req, res) => {
 						success: true,
 					});
 
-					return `${d.Key} uploaded! ${d.Location}`;
+					return `${d.Key.slice(0, 20)} uploaded!`;
 				});
 
 				user
 					.update(user)
-					.then(doc => {
-						console.log(doc);
-					})
-					.catch(err => {
-						console.log(err);
-					});
+					.then(doc => {})
+					.catch(err => {});
 
 				errors.forEach(e => {
 					mes.push(e);
 				});
-				res.send(mes.join('<br>'));
+				res.redirect(`/?message=${mes.join('%0A').trim()}`);
 			})
 			.catch(function(err) {
 				res.send(
